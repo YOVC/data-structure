@@ -4,16 +4,16 @@ import java.util.Scanner;
 
 public class QueueTest {
     public static void main(String[] args) {
+        System.out.println("s(show):显示队列");
+        System.out.println("e(exit)退出程序");
+        System.out.println("a(add)添加数据");
+        System.out.println("g(get)取出数据");
+        System.out.println("h(head)查看队列头元素");
         CircleQueue circleQueue = new CircleQueue(4);
         char result = ' '; //接受用户输入
         Scanner scanner = new Scanner(System.in);
         boolean flag = true;
         while (flag){
-            System.out.println("s(show):显示队列");
-            System.out.println("e(exit)推出程序");
-            System.out.println("a(add)添加数据");
-            System.out.println("g(get)取出数据");
-            System.out.println("h(head)查看队列头元素");
             result = scanner.next().charAt(0); //接受一个字符
             switch (result){
                 case 's':try {

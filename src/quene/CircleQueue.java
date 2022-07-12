@@ -3,12 +3,12 @@ public class CircleQueue {
     /**
      * 使用数组作为队列
      */
-    private int[] arr;
+    private final int[] arr;
 
     /**
      * 队列的最大长度
      */
-    private int maxsize;
+    private final int maxsize;
 
     /**
      * front指向队列的第一个元素
@@ -36,6 +36,7 @@ public class CircleQueue {
      * @return boolean
      */
     public boolean isFull(){
+        //语句1：判断队列是否满了
         return (rear + 1) % maxsize == front;
     }
 
@@ -44,6 +45,7 @@ public class CircleQueue {
      * @return boolean
      */
     public boolean isEmpty(){
+
         return rear == front;
     }
 
@@ -59,7 +61,7 @@ public class CircleQueue {
         }
         //2.向队列中加入数据
         arr[rear] = item;
-        //3.rear后移，注意考虑取模
+        //语句2：rear后移，注意考虑取模
         rear = (rear + 1) % maxsize;
     }
 
@@ -74,7 +76,7 @@ public class CircleQueue {
         }
         //2.取出数据
         int result = arr[front];
-        //3.front后移,注意取模
+        //语句3.front后移,注意取模
         front = (front + 1) % maxsize;
         //4.返回数据
         return result;
@@ -98,6 +100,7 @@ public class CircleQueue {
      * @return 有效数据个数
      */
     public int size(){
+        //语句4：队列有效数据个数计算
         return (rear - front + maxsize) % maxsize;
     }
 
